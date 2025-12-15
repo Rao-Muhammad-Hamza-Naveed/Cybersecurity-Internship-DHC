@@ -1,0 +1,29 @@
+# Week 2 – Cross-Site Scripting (XSS) Assessment
+
+## Objective
+The objective of this task was to identify and exploit XSS vulnerabilities in OWASP Juice Shop.
+
+## Vulnerability Type
+Reflected Cross-Site Scripting (XSS)
+
+## Payload Used
+<img src=x onerror=alert(1)>
+
+## Affected Component
+Search functionality of the OWASP Juice Shop application.
+
+## Description
+The search input reflects user input back into the page without proper sanitization.
+By injecting a malicious HTML payload using an image tag with an event handler, JavaScript code was successfully executed.
+
+## Impact
+An attacker can execute arbitrary JavaScript in the victim’s browser, which may lead to:
+- Session hijacking
+- Credential theft
+- Defacement
+- Phishing attacks
+
+## Mitigation
+- Proper input validation
+- Output encoding
+- Use of Content Security Policy (CSP)
